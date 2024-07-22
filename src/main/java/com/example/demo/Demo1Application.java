@@ -9,7 +9,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -34,9 +33,7 @@ public class Demo1Application {
 				new UserEntity(2, "User", "password", new ArrayList<>())
 		).collect(Collectors.toList());
 		users.get(1).getRoles().add(roleEntity);
-		users.get(0).getRoles().add(roleEntity2);
 		users.get(0).getRoles().add(roleEntity3);
-		users.get(1).getRoles().add(roleEntity2);
 		users.get(2).getRoles().add(roleEntity2);
 		userRepository.saveAll(users);
 	}
